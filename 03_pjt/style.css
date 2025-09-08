@@ -1,0 +1,340 @@
+/* =========================
+   Blue Theme (공적/신뢰감)
+   ========================= */
+:root{
+  --brand-primary: #1e4db7;     /* 메인 블루 */
+  --brand-primary-600: #18429d; /* hover */
+  --brand-accent:  #19c2d8;     /* 포인트 라인 */
+  --brand-muted:   #6b7280;     /* 보조 텍스트 */
+  --brand-border:  #e5e7eb;     /* 옅은 경계 */
+  --bg-page:       #f7fafc;     /* 페이지 배경 */
+  --bg-readonly:   #eef2f7;     /* 읽기전용 인풋 배경 */
+  --text-strong:   #0f172a;     /* 짙은 남색 텍스트 */
+}
+
+/* 기본 타이포 & 배경 */
+html, body{
+  font-family: "Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-page);
+}
+
+/* 상단 브랜드 바(선택) */
+.brand-bar{
+  background: var(--brand-primary);
+  color: #fff;
+  font-weight: 800;
+}
+
+/* 중앙 탭 네비게이션 */
+.tabs-center{
+  border-bottom: 1px solid var(--brand-border);
+  margin: 32px auto 28px;           /* 필요시 mt-4/5로 가감 가능 */
+  max-width: 980px;                  /* 카드 폭과 정렬 */
+}
+.tabs-center .nav-link{
+  color: var(--brand-muted);
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin: 0 10px;
+  padding: 10px 14px;
+  font-weight: 700;
+}
+.tabs-center .nav-link:hover{
+  color: var(--text-strong);
+  border-bottom-color: #cbd5e1;
+}
+.tabs-center .nav-link.active{
+  color: var(--text-strong);
+  background: transparent;
+  border-bottom-color: var(--brand-accent);
+}
+
+/* 카드 컨테이너 */
+.profile-card,
+.info-card{
+  max-width: 980px;
+  margin: 48px auto;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #eef2f7;
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  padding: 32px 28px 28px;
+}
+
+/* 섹션 타이틀 */
+.card-title-main{
+  text-align: center;
+  color: var(--text-strong);
+  font-weight: 800;
+  letter-spacing: .2px;
+  font-size: 1.5rem;
+  margin-bottom: 28px;
+}
+.section-title,
+.section-title2{
+  text-align: center;
+  color: var(--text-strong);
+  font-weight: 800;
+  margin: 20px 0 12px;
+}
+
+/* 좌/우 2열 구분선 (md 이상에서만) */
+.left-col{ border-right: 1px solid #eee; }
+@media (max-width: 991.98px){
+  .left-col{
+    border-right: 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+/* 프로필 영역 */
+.profile-wrap{ text-align: center; }
+.profile-label{ font-weight: 600; margin-bottom: 12px; }
+.profile-img{
+  width: 300px; height: 300px; object-fit: cover;
+  border-radius: 50%;
+  filter: drop-shadow(10px 6px 6px #c3c3c3);
+  display: inline-block;
+}
+.intro-label{ font-weight: 600; margin: 18px 0 8px; }
+.intro-area{ resize: vertical; min-height: 44px; }
+.update-btn{ margin-left: 8px; }
+
+/* 폼 배치 & 중앙 정렬 */
+.form-section, .form-section2{ margin: 20px auto; }
+.form-section .d-flex,
+.form-section2 .d-flex{
+  justify-content: center;          /* 라디오/체크 중앙 정렬 */
+  gap: 18px;
+}
+.form-check{ margin-bottom: 6px; }
+
+/* 컨트롤 톤 업 */
+.input-group-text{
+  background: var(--bg-readonly);
+  border-color: #e2e8f0;
+  color: #334155;
+  font-weight: 600;
+}
+.form-control[readonly],
+.form-control:disabled{
+  background: var(--bg-readonly);
+  color: #334155;
+  border-color: #e2e8f0;
+}
+
+/* 버튼(primary) */
+.btn-primary{
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
+  font-weight: 700;
+}
+.btn-primary:hover{
+  background: var(--brand-primary-600);
+  border-color: var(--brand-primary-600);
+}
+
+/* 체크박스/라디오 컬러 & 포커스 */
+.form-check-input:checked{
+  background-color: var(--brand-primary);
+  border-color: var(--brand-primary);
+}
+.form-check-input:focus{
+  box-shadow: 0 0 0 .2rem rgba(30,77,183,.15);
+}
+
+/* 반응형 여백 보정 */
+@media (max-width: 767.98px){
+  .profile-card, .info-card{ padding: 24px 18px; }
+  .tabs-center{ margin: 20px auto; }
+  .form-section .d-flex,
+  .form-section2 .d-flex{ gap: 12px; }
+}
+
+/* =========================
+   iOS-like Theme (light)
+   ========================= */
+.ios-theme{
+  --ios-bg:        #F2F2F7;    /* iOS 그룹드 배경 */
+  --ios-card:      #FFFFFF;    /* 카드 */
+  --ios-separator: #E5E5EA;    /* 얇은 구분선 */
+  --ios-label:     #1C1C1E;    /* 본문 텍스트 */
+  --ios-secondary: #6B7280;    /* 보조 텍스트 */
+  --ios-blue:      #0A84FF;    /* iOS 블루 */
+  --ios-blue-d:    #0060DF;    /* hover/active */
+  --ios-shadow:    0 1px 2px rgba(0,0,0,.06);
+  --ios-radius:    14px;
+  --ios-radius-xl: 18px;
+}
+
+.ios-theme html, 
+.ios-theme body{
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+               "Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  background: var(--ios-bg);
+  color: var(--ios-label);
+}
+
+/* 상단 브랜드바(있다면) : 얇고 평평하게 */
+.ios-theme .brand-bar{
+  background: var(--ios-blue);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+
+/* 탭을 iOS 세그먼티드 컨트롤처럼 */
+.ios-theme .tabs-center{
+  border: none;
+  margin: 24px auto 16px;
+  max-width: 980px;
+}
+.ios-theme .tabs-center .nav{
+  background: #fff;
+  border: 1px solid var(--ios-separator);
+  border-radius: 12px;
+  padding: 4px;
+  box-shadow: var(--ios-shadow);
+}
+.ios-theme .tabs-center .nav-link{
+  color: var(--ios-secondary);
+  border: none !important;
+  border-radius: 10px;
+  padding: 8px 14px;
+  margin: 0 2px;
+  font-weight: 600;
+}
+.ios-theme .tabs-center .nav-link.active{
+  color: #fff;
+  background: var(--ios-blue);
+}
+
+/* 카드(폼 컨테이너) */
+.ios-theme .profile-card,
+.ios-theme .info-card{
+  background: var(--ios-card);
+  border: 1px solid var(--ios-separator);
+  border-radius: var(--ios-radius-xl);
+  box-shadow: var(--ios-shadow);
+  max-width: 980px;
+  margin: 24px auto 20px;
+  padding: 20px 18px;
+}
+
+/* 섹션 타이틀 */
+.ios-theme .card-title-main{
+  color: var(--ios-label);
+  font-weight: 800;
+  font-size: 1.35rem;
+  margin: 6px 0 18px;
+  letter-spacing: .2px;
+}
+.ios-theme .section-title,
+.ios-theme .section-title2{
+  color: var(--ios-label);
+  font-weight: 700;
+  margin: 14px 0 8px;
+}
+
+/* 입력 컨트롤 */
+.ios-theme .form-control{
+  border: 1px solid var(--ios-separator);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: none;
+}
+.ios-theme .form-control:focus{
+  border-color: var(--ios-blue);
+  box-shadow: 0 0 0 3px rgba(10,132,255,.15);
+}
+.ios-theme .form-control[readonly],
+.ios-theme .form-control:disabled{
+  background: #F5F6F7;
+  color: #3A3A3C;
+}
+
+/* 인풋 그룹 텍스트 */
+.ios-theme .input-group-text{
+  background: #F5F6F7;
+  border-color: var(--ios-separator);
+  color: #3A3A3C;
+  font-weight: 600;
+  border-radius: 12px;
+}
+
+/* 버튼 (iOS 블루) */
+.ios-theme .btn-primary{
+  background: var(--ios-blue);
+  border-color: var(--ios-blue);
+  font-weight: 700;
+  border-radius: 12px;
+}
+.ios-theme .btn-primary:hover{
+  background: var(--ios-blue-d);
+  border-color: var(--ios-blue-d);
+}
+
+/* 체크박스/라디오 (블루 포인트) */
+.ios-theme .form-check-input:checked{
+  background-color: var(--ios-blue);
+  border-color: var(--ios-blue);
+}
+.ios-theme .form-check-input:focus{
+  box-shadow: 0 0 0 3px rgba(10,132,255,.15);
+}
+
+/* 라디오/체크 그룹 중앙 정렬 유지 */
+.ios-theme .form-section .d-flex,
+.ios-theme .form-section2 .d-flex{
+  justify-content: center;
+  gap: 14px;
+}
+
+/* 프로필 이미지 라운드/그림자 살짝 완화 */
+.ios-theme .profile-img{
+  border-radius: 50%;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.12));
+}
+
+/* 구분선/2열 보정 */
+.ios-theme .left-col{ border-right: 1px solid var(--ios-separator); }
+@media (max-width: 991.98px){
+  .ios-theme .left-col{
+    border-right: 0;
+    border-bottom: 1px solid var(--ios-separator);
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+  }
+}
+
+/* 모바일 여백 */
+@media (max-width: 767.98px){
+  .ios-theme .profile-card, 
+  .ios-theme .info-card{ padding: 18px 14px; margin: 16px auto; }
+  .ios-theme .tabs-center{ margin: 16px auto 8px; }
+}
+
+/* 헤더(메인 타이틀) 강조 */
+.card-title-main {
+  font-weight: 900;     /* 더 굵게 */
+  font-size: 1.75rem;   /* 약간 크게 */
+  margin-bottom: 36px;  /* 아래 간격도 넉넉히 */
+}
+
+/* 오른쪽 폼 섹션 타이틀과 옵션 간격 */
+.section-title {
+  margin-bottom: 18px;  /* 기존 10px → 18px */
+}
+
+.section-title2 {
+  margin-bottom: 18px;  /* 동일 적용 */
+}
+
+/* 각 섹션 간 위아래 간격 더 주기 */
+.form-section {
+  margin: 32px auto;   /* 위아래 여백 */
+}
