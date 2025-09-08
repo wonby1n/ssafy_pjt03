@@ -59,4 +59,4 @@
 ## 🧑‍💻 Author
 
 - SSAFY 14기 교육생 | 전직 도시계획 전문가 → 개발자 전향 중
-- GitHub: [@your-github-id](https://github.com/your-github-id)
+- GitHub: [@your-github-id](https://github.com/kyo181)
